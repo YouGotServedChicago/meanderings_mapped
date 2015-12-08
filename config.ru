@@ -5,4 +5,4 @@ require('./controllers/application')
 require('./controllers/user')
 require('./models/user')
 
-map('/') { run UsersController }
+map('/') { run UserController }
