@@ -26,17 +26,20 @@
           <textarea class="form-control" rows="6" placeholder="Bio Info"></textarea>
         </div>
       </div>
-        <form action="/api/photo" method="post"></form>
+    </form>
+      <form action="/api/photo" method="post">
         <div class="form-group">
           <label for="photoInputFile" class="col-sm-1 control-label">Image upload</label>
             <div class="col-sm-3">
-            <input type="file" name="image" id="profile_pic">
+            <input type="file" name="image">
             <input type="hidden" name="image_as_base64">
-            <input type="submit" value="upload">
-            <div id="base64"></div>
-          </div>
-          <p class="help-block">Select & upload profile picture</p>
-        </div>
+            <input type="submit" value="Upload">
+          </form>
+        <div id="images"></div>
+      </div>
+    <p class="help-block">Select & upload profile picture</p>
+  </div>
+  <form>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Create Profile</button>
