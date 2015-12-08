@@ -1,2 +1,7 @@
-require './app.rb'
-run Sinatra::Application
+require 'sinatra/base'
+
+require('./controllers/application')
+require('./controllers/user')
+require('./models/user')
+
+map('/') { run UsersController }

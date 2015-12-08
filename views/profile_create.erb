@@ -26,10 +26,14 @@
           <textarea class="form-control" rows="6" placeholder="Bio Info"></textarea>
         </div>
       </div>
+        <form action="/api/photo" method="post"></form>
         <div class="form-group">
-          <label for="exampleInputFile" class="col-sm-1 control-label">Image upload</label>
+          <label for="photoInputFile" class="col-sm-1 control-label">Image upload</label>
             <div class="col-sm-3">
-            <input type="file" id="profile_pic">
+            <input type="file" name="image" id="profile_pic">
+            <input type="hidden" name="image_as_base64">
+            <input type="submit" value="upload">
+            <div id="base64"></div>
           </div>
           <p class="help-block">Select & upload profile picture</p>
         </div>
@@ -39,15 +43,3 @@
       </div>
     </div>
   </form>
-
-
-<!-- <form class="horizontal">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <label for="Name">Name</label>
-        <input type="name" class="form-control" id="user_name" placeholder="Name">
-      </div>
-        <div class="col-md-6">
-        </div>
-    </div> -->
