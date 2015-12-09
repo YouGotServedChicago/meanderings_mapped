@@ -37,5 +37,13 @@ $(document).ready(function(event) {
       var img = document.createElement('img');
       img.src = base64Image;
       images.appendChild(img);
+        document.getElementById('create_profile').onclick = function profilePic(){
+          console.log('button click works');
+          var imageContainer = document.getElementById('new_image');
+          var img = new Image();
+          image.src = 'data:image/png;base64,iVBORw0K...';
+          image_new.appendChild(image);
+      }
     }
+
   }); // end of document.ready
