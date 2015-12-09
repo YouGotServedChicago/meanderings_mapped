@@ -2,20 +2,23 @@ class ProfilesController < ApplicationController
 
   get '/' do
     @profiles = Profile.all
+    # @profiles = session[:current_user]
+    p @profiles
     erb :profile
   end
 
-  post '/' do
-    p params
-    @profiles = Profile.where("profile_name = ?", params[:profile_name])
-    @profiles.profile_name = params[:profile_name]
-    @profiles.date_of_birth = params[:date_of_birth]
-    @profiles.city = params[:city]
-    @profiles.bio = params[:bio]
-    @profiles.image = params[:image]
-    @profiles.base_64_image = params[:image_as_base64]
-    @profiles.save
-  end
+  # post '/' do
+  #   p params
+  #   @profiles = Profile.find_by(:profile_name => params[:profile_name])
+  #   binding.pry
+  #   @profiles.profile_name = params[:profile_name]
+  #   @profiles.date_of_birth = params[:date_of_birth]
+  #   @profiles.city = params[:city]
+  #   @profiles.bio = params[:bio]
+  #   @profiles.image = params[:image]
+  #   @profiles.base_64_image = params[:image_as_base64]
+  #   @profiles.save
+  # end
 
   get '/create' do
     erb :profile_create
@@ -31,7 +34,9 @@ class ProfilesController < ApplicationController
     @profiles.image = params[:image]
     @profiles.base_64_image = params[:image_as_base64]
     @profiles.save
-    erb :profile_create
+    #erb :profile_create
+    #binding.pry
+    # redirect '/profile'
   end
 
 end
