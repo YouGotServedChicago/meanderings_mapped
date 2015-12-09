@@ -67,6 +67,9 @@ get '/already_exists' do
   erb :already_exists
 end
 
+get '/create_entry' do
+  erb :create_entry
+end
 
 
 

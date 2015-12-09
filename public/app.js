@@ -3,9 +3,9 @@ $(document).ready(function(event) {
   var fileInput = document.querySelector('input[type="file"]');
   var hiddenFileForParams = document.querySelector('input[type="hidden"]');
 
-  fileInput.addEventListener('change', function() {
-    var fileAsBase64 = convertToBase64(fileInput.files[0], hiddenFileForParams, addImage);
-  });
+  // fileInput.addEventListener('change', function() {
+  //   var fileAsBase64 = convertToBase64(fileInput.files[0], hiddenFileForParams, addImage);
+  // });
 
   function convertToBase64(binaryData, hiddenInput, callback) {
     var reader = new FileReader();
@@ -37,6 +37,41 @@ $(document).ready(function(event) {
       var img = document.createElement('img');
       img.src = base64Image;
       images.appendChild(img);
-    }
+    });
+
+//start Google Maps autocomplete script
+var autocomplete;
+var placeNumber;
+
+// Set the default area bias - (Entire Earth)
+var defaultBounds = new google.maps.LatLngBounds(
+new google.maps.LatLng(-90, -180),
+new google.maps.LatLng(90, 180)
+);
+
+var input = document.getElementById("autocomplete")  //Specify textbox
+var options = {              //Set options for search bar
+  bounds: defaultBounds
+};
+
+function initialize(){
+autocomplete = new google.maps.places.Autocomplete(input,options);
+autocomplete.addListener('place_changed',getPlaceId);
+};
+
+function getPlaceId(){
+  var place = autocomplete.getPlace();
+  placeNumber = place.place_id;
+  console.log(placeNumber);
+  var idArray = [];
+  idObject.whatever=idArray;
+  idArray.push(placeNumber);
+  // btn = document.getElementById("id_button");
+  // btn.onclick = function(){
+  //   // $.ajax(id_post);
+  // }
+};
+
+initialize();
 
   }); // end of document.ready
