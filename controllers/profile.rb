@@ -34,4 +34,5 @@ class ProfilesController < ApplicationController
     erb :profile_create
   end
 
+
 end

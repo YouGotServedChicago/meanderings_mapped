@@ -19,13 +19,11 @@ class UsersController < ApplicationController
     erb :not_authorized
   end
 
-<<<<<<< HEAD
-
   get '/profile_create' do
     erb :profile_create
   end
-=======
-  
+
+
   # get '/profile_create' do
   #   erb :profile_create
   # end
@@ -38,7 +36,7 @@ class UsersController < ApplicationController
   #   session[:current_user] = user
   #   redirect '/'
   # end
->>>>>>> 5525c5dcb7ad7f99dc18ddd7d5d2281a0f05439c
+
 
 
   # post '/profile_create' do
@@ -82,9 +80,7 @@ get '/already_exists' do
   erb :already_exists
 end
 
-get '/create_entry' do
-  erb :create_entry
-end
+
 
 
 
