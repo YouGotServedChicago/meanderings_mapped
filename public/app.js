@@ -31,11 +31,12 @@ $(document).ready(function(event) {
         reader.readAsDataURL(binaryData);
       };
 
-  function addImage(base64Image) {
+  (function addImage(base64Image) {
     if (!base64Image) return;
       var imageContainer = document.getElementById('images');
       var img = document.createElement('img');
       img.src = base64Image;
       images.appendChild(img);
     }
+
   }); // end of document.ready
