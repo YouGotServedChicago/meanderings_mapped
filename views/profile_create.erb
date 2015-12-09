@@ -1,48 +1,44 @@
 <br>
 <br>
 
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="/profile" method="post">
     <div class="form-group">
       <label for="register_name" class="col-sm-1 control-label">Name</label>
       <div class="col-sm-3">
-        <input type="text" class="form-control" id="register_name" placeholder="Name">
+        <input type="text" class="form-control" name="profile_name" placeholder="Name">
       </div>
     </div>
     <div class="form-group">
       <label for="birthday" class="col-sm-1 control-label">Date of Birth</label>
       <div class="col-sm-3">
-        <input type="date" class="form-control" id="date_of_birth" placeholder="Date of Birth">
+        <input type="date" class="form-control" name="date_of_birth" placeholder="Date of Birth">
       </div>
     </div>
     <div class="form-group">
       <label for="location" class="col-sm-1 control-label">Lives in</label>
       <div class="col-sm-3">
-        <input type="text" class="form-control" id="location" placeholder="City Name">
+        <input type="text" class="form-control" name="city" placeholder="City Name">
       </div>
     </div>
     <div class="form-group">
       <label for="bio" class="col-sm-1 control-label">Biography</label>
         <div class="col-sm-3">
-          <textarea class="form-control" rows="6" placeholder="Bio Info"></textarea>
+          <textarea class="form-control" rows="6" name='bio' placeholder="Bio Info"></textarea>
         </div>
       </div>
-    </form>
-      <form action="/api/photo" method="post">
         <div class="form-group">
           <label for="photoInputFile" class="col-sm-1 control-label">Image upload</label>
             <div class="col-sm-3">
             <input type="file" name="image">
             <input type="hidden" name="image_as_base64">
-            <input type="submit" value="Upload">
-          </form>
+            <!-- <input type="submit" value="Upload"> -->
         <div id="images"></div>
-      </div>
-    <p class="help-block">Select & upload profile picture</p>
+      <p class="help-block">Select & upload profile picture</p>
+    </div>
   </div>
-  <form>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Create Profile</button>
+        <button type="submit" id="create_profile" class="btn btn-default">Create Profile</button>
       </div>
     </div>
   </form>
