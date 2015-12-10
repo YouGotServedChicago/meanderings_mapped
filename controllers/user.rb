@@ -1,11 +1,23 @@
 class UsersController < ApplicationController
 
-  def does_user_exist(username)
-    user = User.find_by(:user_name => username)
-    if user
-      return true
+  def get_current_user_if_exists
+    if session[:user_name]
+      return session[:user_name]
     else
+      return nil
+    end
+  end
+
+  def set_current_user_and_login(user_object)
+    session[:user_name] = user_object
+  end
+
+  def log_current_user_out
+    if get_current_user_if_exists == nil
       return false
+    else
+      session[:user_name] = nil
+      return true
     end
   end
 
@@ -13,14 +25,60 @@ class UsersController < ApplicationController
     erb :index
   end
 
-  get '/not_authorized' do
-    erb :not_authorized
+  get '/logout' do
+    p "you have been logged out"
+    log_current_user_out
+    redirect '/'
   end
 
-
-  get '/profile_create' do
-    erb :profile_create
+  get '/login' do
+    erb :login
   end
+
+  get '/register' do
+    erb :login
+  end
+
+  post '/login' do
+    attempt = User.authenticate(params[:user_name], params[:password])
+    set_current_user_and_login(attempt)
+    redirect '/profile'
+  end
+
+  post '/register' do
+    attempt = User.register(params[:user_name], params[:password])
+    if (attempt == false)
+      set_app_message('An issue has arisen with your registration. Please try again!')
+    else
+      set_current_user_and_login(attempt)
+  end
+  redirect '/profile/create'
+end
+
+end
+
+
+  # def does_user_exist(username)
+  #   user = User.find_by(:user_name => username)
+  #   if user
+  #     return true
+  #   else
+  #     return false
+  #   end
+  # end
+  #
+  # get '/' do
+  #   erb :index
+  # end
+  #
+  # get '/not_authorized' do
+  #   erb :not_authorized
+  # end
+  #
+  #
+  # get '/profile_create' do
+  #   erb :profile_create
+  # end
 
   # post '/profile_create' do
   #   if does_user_exist(params[:user_name]) == true
@@ -31,43 +89,40 @@ class UsersController < ApplicationController
   #   redirect '/'
   # end
 
-  get '/login' do
-    erb :login
-  end
-
-  post '/login' do
-    user = User.authenticate(params[:user_name], params[:password])
-      if user
-        session[:current_user] = user
-        redirect '/'
-      else
-        erb :login
-        redirect '/already_exists'
-      end
-    end
-
-get '/register' do
-  erb :login
-end
-
-post '/register' do
-  if does_user_exist(params[:user_name]) == true
-    redirect '/already_exists'
-  end
-  user = User.create(user_email: params[:user_email], user_name: params[:user_name], password: params[:password])
-  session[:current_user] = user
-  redirect '/'
-end
-
-get '/already_exists' do
-  erb :already_exists
-end
-
-get '/create_entry' do
-  erb :create_entry
-end
-
-
-
-
-end
+#   get '/login' do
+#     erb :login
+#   end
+#
+#   post '/login' do
+#     user = User.authenticate(params[:user_name], params[:password])
+#       if user
+#         session[:current_user] = user
+#         redirect '/'
+#       else
+#         erb :login
+#         redirect '/already_exists'
+#       end
+#     end
+#
+# get '/register' do
+#   erb :login
+# end
+#
+# post '/register' do
+#   if does_user_exist(params[:user_name]) == true
+#     redirect '/already_exists'
+#   end
+#   user = User.create(user_email: params[:user_email], user_name: params[:user_name], password: params[:password])
+#   session[:current_user] = user
+#   redirect '/'
+# end
+#
+# get '/already_exists' do
+#   erb :already_exists
+# end
+#
+# get '/create_entry' do
+#   erb :create_entry
+# end
+#
+# end
