@@ -2,7 +2,7 @@ $(document).ready(function(event) {
 
   // select our input DOM element with a type of file
 var fileInput = document.querySelector('input[type="file"]');
-var hiddenFileForParams = document.querySelector('input[type="hidden"]');
+var hiddenFileForParams = document.querySelector('#base');
 
 fileInput.addEventListener('change', function() {
 var fileAsBase64 = convertToBase64(fileInput.files[0], hiddenFileForParams, addImage);
