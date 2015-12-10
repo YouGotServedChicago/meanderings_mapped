@@ -1,5 +1,8 @@
+$margin-left: 50px;
+
 body {
   padding-top: 70px;
+  background: rgb(116, 202, 238) !important;
 }
 
 #nav_bar {
@@ -13,5 +16,15 @@ img {
 }
 
 .panel.panel-default {
+  margin: $margin-left;
   width: 30%;
+}
+
+#profile_head {
+  margin: $margin-left;
+}
+
+#meander {
+  margin-top: 140px;
+  text-align: center;
 }

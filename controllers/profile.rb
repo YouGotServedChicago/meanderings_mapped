@@ -1,8 +1,7 @@
 class ProfilesController < ApplicationController
 
   get '/' do
-    # @profiles = Profile.all
-    @profiles = session[:user_name]
+    @profiles = Profile.all
     p @profiles
     erb :profile
   end

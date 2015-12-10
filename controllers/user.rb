@@ -100,9 +100,3 @@ end
 #   session[:current_user] = user
 #   redirect '/'
 # end
-#
-# get '/already_exists' do
-#   erb :already_exists
-# end
-#
-# end

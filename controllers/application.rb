@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   end
 
 end
-  
+
 
   # def authorization_check
   #   if session[:current_user] == nil
@@ -30,10 +30,5 @@ end
   # get '/not_authorized' do
   #   p params
   #   erb :not_authorized
-  # end
-  #
-  #
-  # not_found do
-  #   erb :not_found
   # end
   #
