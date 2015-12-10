@@ -9,29 +9,32 @@
     <!-- Table -->
     <table class="table">
       <tbody>
+        <% @profiles.each do |profile| %>
         <tr>
           <td>Name</td>
           <td>
-            
+            <%= profile.profile_name %>
           </td>
         </tr>
       <tr>
         <td>Age</td>
         <td>
-          TBD
+          <%= profile.date_of_birth %>
         </td>
       </tr>
       <tr>
         <td>City</td>
         <td>
-          TBD
+          <%= profile.city %>
         </td>
       </tr>
       <tr>
         <td>Bio</td>
         <td>
-          TBD
+          <%= profile.bio %>
         </td>
       </tr>
+      <%end%>
+    </tbody>
   </table>
 </div>

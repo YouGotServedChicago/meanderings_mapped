@@ -34,10 +34,10 @@ reader.onload = function (event) {
 
 function addImage(base64Image) {
 if (!base64Image) return;
-var imageContainer = document.getElementById('images');
+var imageContainer = document.getElementById('profile_pic');
 var img = document.createElement('img');
 img.src = base64Image;
-images.appendChild(img);
+profile_pic.appendChild(img);
   document.getElementById('create_profile').onclick = function profilePic(){
     console.log('button click works');
     var imageContainer = document.getElementById('new_image');
