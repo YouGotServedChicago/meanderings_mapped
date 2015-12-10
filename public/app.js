@@ -64,7 +64,7 @@ $(document).ready(function(){
 
 function initializeGoogleMaps(){
   var request = {
-    placeId: 'ChIJqaYYRe7hR4cRquYCxalSpBU'
+    placeId: "#<%=@place_id%>"
   };
 
 function callback(place,status){

@@ -18,6 +18,15 @@ class EntriesController < ApplicationController
   #   redirect '/'
   # end
 
+  get '/create_entry/db' do
+    # title = Entry.find_by(title: 'Theory')
+    one_entry = Entry.find(1)
+    @place_id = one_entry[:google_place_id]
+    p @place_id
+
+  end
+
+
   post '/create_entry' do
     @entries = Entry.new
     @entries.title = params[:entry_title]
