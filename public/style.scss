@@ -25,6 +25,16 @@ body {
   margin: $margin-left;
 }
 
+.imageContainer{
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.imageContainer img {
+  height: auto;
+  width: 100%;
+}
+
 #profile_pic img {
   height: 80px;
   width: 80px;

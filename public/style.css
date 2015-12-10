@@ -18,6 +18,14 @@ body {
 #profile_head {
   margin: 50px; }
 
+.imageContainer {
+  max-width: 150px;
+  max-height: 150px; }
+
+.imageContainer img {
+  height: auto;
+  width: 100%; }
+
 #profile_pic img {
   height: 80px;
   width: 80px; }
