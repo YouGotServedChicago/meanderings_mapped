@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-  def password=(pwd)
-    self.password_digest = BCrypt::Password.create(pwd)
+  def password=(password)
+    self.password_digest = BCrypt::Password.create(password)
   end
 
   def password
@@ -12,14 +12,18 @@ class User < ActiveRecord::Base
 
   def self.authenticate(user_name, password)
     user = User.find_by(user_name: user_name)
-    return user if user.password == password
+    if user.password == password
+      return user
+    else
+      return nil
+    end
   end
 
-  def self.register(user_name, password)
-    new_user = User.create(user_name: user_name, password: password)
+  def self.register(user_name, user_email, password)
+    new_user = User.create(user_name: user_name, user_email: user_email, password: password)
     new_user.save
 
-    if (new_user.name == user_name)
+    if (new_user.user_name == user_name)
       return new_user
     else
       return false

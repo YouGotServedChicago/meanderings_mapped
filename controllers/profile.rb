@@ -1,8 +1,8 @@
 class ProfilesController < ApplicationController
 
   get '/' do
-    @profiles = Profile.all
-    # @profiles = session[:current_user]
+    # @profiles = Profile.all
+    @profiles = session[:user_name]
     p @profiles
     erb :profile
   end
@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
     @profiles.save
     #erb :profile_create
     #binding.pry
-    # redirect '/profile'
+    redirect '/profile'
   end
 
 end

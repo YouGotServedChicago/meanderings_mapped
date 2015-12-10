@@ -39,6 +39,10 @@ class UsersController < ApplicationController
     erb :login
   end
 
+  get '/not_authorized' do
+    erb :not_authorized
+  end
+
   post '/login' do
     attempt = User.authenticate(params[:user_name], params[:password])
     set_current_user_and_login(attempt)
@@ -46,11 +50,12 @@ class UsersController < ApplicationController
   end
 
   post '/register' do
-    attempt = User.register(params[:user_name], params[:password])
+    attempt = User.register(params[:user_name], params[:user_email], params[:password])
     if (attempt == false)
       set_app_message('An issue has arisen with your registration. Please try again!')
     else
       set_current_user_and_login(attempt)
+      puts "new user registered!!!"
   end
   redirect '/profile/create'
 end
@@ -67,19 +72,6 @@ end
   #   end
   # end
   #
-  # get '/' do
-  #   erb :index
-  # end
-  #
-  # get '/not_authorized' do
-  #   erb :not_authorized
-  # end
-  #
-  #
-  # get '/profile_create' do
-  #   erb :profile_create
-  # end
-
   # post '/profile_create' do
   #   if does_user_exist(params[:user_name]) == true
   #     redirect '/user/login'
@@ -89,10 +81,6 @@ end
   #   redirect '/'
   # end
 
-#   get '/login' do
-#     erb :login
-#   end
-#
 #   post '/login' do
 #     user = User.authenticate(params[:user_name], params[:password])
 #       if user
@@ -103,10 +91,6 @@ end
 #         redirect '/already_exists'
 #       end
 #     end
-#
-# get '/register' do
-#   erb :login
-# end
 #
 # post '/register' do
 #   if does_user_exist(params[:user_name]) == true
@@ -119,10 +103,6 @@ end
 #
 # get '/already_exists' do
 #   erb :already_exists
-# end
-#
-# get '/create_entry' do
-#   erb :create_entry
 # end
 #
 # end
