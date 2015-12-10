@@ -1,5 +1,13 @@
 
 var idObject = {};
+var modelDataObj = 'test';
+var placeArray = [];
+
+function testIt(it) {
+  console.log('hi roger');
+  console.log(it);
+  console.log('bye roguer');
+}
 // var idArray =[];
 $(document).ready(function(){
 
@@ -61,10 +69,71 @@ $(document).ready(function(){
 // initialize();
 
 //Google Map by Place ID
+//
+// var realPlaceId;
+//
+// function fuckyeah(stuff) {
+//   initializeGoogleMaps(stuff)
+// }
+// // function recoverPlaceId(hookFunction){
+// function recoverPlaceId(hookFunction){
+//   return $.ajax({
+//   url: '/entry/create_entry/db',
+//   type: "GET",
+//   dataType: 'text',
+//   success: function(data) {
+//     console.log(data);
+//     realPlaceId = data;
+//     modelDataObj = data;
+//     hookFunction(data);
+//     console.log('we did it roger');
+//     console.log(realPlaceId);
+//   },
+//   fail: function(error) {
+//     console.log('not cool!');
+//   }
+// });
+// }
+//
+// console.log(modelDataObj);
+// recoverPlaceId(fuckyeah);
+// var userPlaceId = recoverPlaceId();
+// console.log(userPlaceId);
+// console.log(realPlaceId);
+// console.log(userPlaceId.responseText);
+// console.log(realPlaceId);
+// console.log(typeof userPlaceId);
+
+// function recoverPlaceId(hookFunction){
+function recoverPlaceId(){
+  return $.ajax({
+  url: '/entry/create_entry/db',
+  type: "GET",
+  dataType: 'text',
+  success: function(data) {
+    placeArray.push(data);
+    console.log(data);
+    // realPlaceId = data;
+    // modelDataObj = data;
+    // hookFunction(data);
+    console.log('we did it roger');
+    // console.log(realPlaceId);
+  },
+  fail: function(error) {
+    console.log('not cool!');
+  }
+});
+}
+var userPlaceId = recoverPlaceId();
+
+
+console.log(userPlaceId);
+
 
 function initializeGoogleMaps(){
+
   var request = {
-    placeId: "#<%=@place_id%>"
+    placeId: 'ChIJR4qudndLx4ARVLDye3zwycw'
   };
 
 function callback(place,status){
