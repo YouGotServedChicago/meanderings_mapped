@@ -5,6 +5,11 @@ class ProfilesController < ApplicationController
     erb :profile
   end
 
+  get '/profile' do
+    erb :profile
+  end
+
+
   post '/' do
     p params
     @profiles = Profile.where("profile_name = ?", params[:profile_name])
