@@ -1,4 +1,4 @@
-<h1>Profile Page</h1>
+<h1 id="profile_head">Profile Page</h1>
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
@@ -9,30 +9,37 @@
     <!-- Table -->
     <table class="table">
       <tbody>
+        <% @profiles.each do |profile| %>
         <tr>
           <td>Name</td>
           <td>
+<<<<<<< HEAD
             TBD
+=======
+            <%= profile.profile_name %>
+>>>>>>> 536eb08766d4734b083ef7b9eca0022477cc4cd6
           </td>
         </tr>
       <tr>
         <td>Age</td>
         <td>
-          TBD
+          <%= profile.date_of_birth %>
         </td>
       </tr>
       <tr>
         <td>City</td>
         <td>
-          TBD
+          <%= profile.city %>
         </td>
       </tr>
       <tr>
         <td>Bio</td>
         <td>
-          TBD
+          <%= profile.bio %>
         </td>
       </tr>
+      <%end%>
+    </tbody>
   </table>
 </div>
 <p> <%= @place_id %> </p>

@@ -1,5 +1,8 @@
+$margin-left: 50px;
+
 body {
   padding-top: 70px;
+  background: rgb(116, 202, 238) !important;
 }
 
 #nav_bar {
@@ -7,11 +10,27 @@ body {
   max-height: 98%;
 }
 
-img {
-  width: 80px;
-  height: 80px;
+#paris {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 40px;
 }
 
 .panel.panel-default {
+  margin: $margin-left;
   width: 30%;
+}
+
+#profile_head {
+  margin: $margin-left;
+}
+
+#profile_pic img {
+  height: 80px;
+  width: 80px;
+}
+
+#meander {
+  margin-top: 40px;
+  text-align: center;
 }
