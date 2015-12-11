@@ -78,7 +78,7 @@ class UsersController < ApplicationController
   redirect '/profile/create'
 end
 
-end
+# end
 
 
 

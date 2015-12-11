@@ -22,6 +22,10 @@ body {
   height: 80px;
   width: 80px; }
 
+#map-canvas {
+  height: 150px;
+  width: 150px; }
+
 #meander {
   margin-top: 40px;
   text-align: center; }

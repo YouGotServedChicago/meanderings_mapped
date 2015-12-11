@@ -3,17 +3,17 @@ class ProfilesController < ApplicationController
   get '/' do
     if session
       @profiles = Profile.where(user_id: session[:user_name].id)
+      @entries = Entry.where(user_id: session[:user_name].id)
+      p "++++++++++++HEEEEYYYYOOOO!!!!++++++++++"
+      p @entries
     else
       @profiles = Profile.all
     end
-    p @profiles
     erb :profile
+
   end
 
 
-  get '/profile' do
-    erb :profile
-  end
 
 
   post '/' do

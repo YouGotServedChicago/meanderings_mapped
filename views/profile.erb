@@ -1,23 +1,17 @@
 <h1 id="profile_head">Profile Page</h1>
 
 <div class="panel panel-default">
-  <!-- Default panel contents -->
     <div class="panel-heading">About</div>
       <div class="panel-body" id="image_new">
         <p>Placeholder for profile image</p>
       </div>
-    <!-- Table -->
     <table class="table">
       <tbody>
         <% @profiles.each do |profile| %>
         <tr>
           <td>Name</td>
           <td>
-<<<<<<< HEAD
-            TBD
-=======
             <%= profile.profile_name %>
->>>>>>> 536eb08766d4734b083ef7b9eca0022477cc4cd6
           </td>
         </tr>
       <tr>
@@ -42,41 +36,45 @@
     </tbody>
   </table>
 </div>
-<p> <%= @place_id %> </p>
+
+<% @entries.each do |entry| %>
 <div class="panel panel-default">
-  <!-- Default panel contents -->
-    <div class="panel-heading">About</div>
+    <div class="panel-heading">Trip</div>
       <div class="panel-body" id="image_new">
-        <p>Placeholder for profile image</p>
-        <!-- <div id="map-canvas" style="width: 200px; height: 150px"></div> -->
+        <div id="map-canvas" style="width: 200px; height: 150px"></div>
       </div>
-    <!-- Table -->
-    <table class="table">
+      <table class="table">
       <tbody>
         <tr>
-          <td>Name</td>
-          <td>
-            TBD
+          <td>Title</td>
+          <td><%= entry.title %>
           </td>
         </tr>
-      <tr>
-        <td>Age</td>
-        <td>
-          <div id="map-canvas" style="width: 200px; height: 150px"></div>
+        <tr>
+        <td>Map</td>
+        <td>Map will go here!!!
+          <div id="map-canvas"></div>
         </td>
       </tr>
       <tr>
-        <td>City</td>
+        <td>Date Visited</td>
         <td>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </td>
+          <%= entry.entry_date %>
+       </td>
       </tr>
       <tr>
-        <td>Bio</td>
+        <td>My Notes</td>
         <td>
-          TBD
+          <%= entry.journal_snippet %>
         </td>
       </tr>
+    </tbody>
   </table>
 </div>
+<% end %>
+
+
+ <form action="/entry/create_entry">
+    <input class="btn btn-primary"type="submit" value="Add Journal Entry">
+</form>
 <!-- <div id="map-canvas" style="width: 200px; height: 150px"></div> -->

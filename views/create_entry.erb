@@ -5,6 +5,7 @@
     <form id="entry_form" class="form-horizontal">
     <div id="the_div"></div>
     <div class="form-group">
+      <input type="hidden" name="user_id" value="<%= @user_id%>" id="user_id">
       <label for="entry_title" class="col-sm-1 control-label">Title</label>
       <div class="col-sm-3">
         <input type="text" class="form-control" name="title" id="title" placeholder="Title Your Entry!"></input>
@@ -29,46 +30,9 @@
         </div>
       </div>
       <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" id="entry_submit" class="btn btn-default">Publish!</button>
-        </div>
+
       </div>
-    </form>
-
-    <!-- <script>
-      window.onload = function() {
-      var autocomplete;
-      var placeNumber;
-
-      // Set the default area bias - (Entire Earth)
-      var defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(-90, -180),
-      new google.maps.LatLng(90, 180)
-      );
-
-      var input = document.getElementById("autocomplete")  //Specify textbox
-      var options = {              //Set options for search bar
-        bounds: defaultBounds
-      };
-
-      function initialize(){
-      autocomplete = new google.maps.places.Autocomplete(input,options);
-      autocomplete.addListener('place_changed',getPlaceId);
-      };
-
-      function getPlaceId(){
-        var place = autocomplete.getPlace();
-        placeNumber = place.place_id;
-        console.log(placeNumber);
-        var idArray = [];
-        idObject.whatever=idArray;
-        idArray.push(placeNumber);
-        // btn = document.getElementById("id_button");
-        // btn.onclick = function(){
-        //   // $.ajax(id_post);
-        // }
-      };
-
-      initialize();
-    };
-    </script> -->
+      </form>
+      <div class="col-sm-offset-2 col-sm-10">
+        <button id="entry_submit" class="btn btn-default">Publish!</button>
+      </div>

@@ -1,69 +1,69 @@
-
-
-  // select our input DOM element with a type of file
-var fileInput = document.querySelector('input[type="file"]');
-var hiddenFileForParams = document.querySelector('#base');
-
-fileInput.addEventListener('change', function() {
-var fileAsBase64 = convertToBase64(fileInput.files[0], hiddenFileForParams, addImage);
-});
-
-function convertToBase64(binaryData, hiddenInput, callback) {
-var reader = new FileReader();
-reader.onload = function (event) {
-// try to read whatever file has been 'readAsDataURL'
-  try {
-    // event target result is our base64 encoded type
-    // this is whatever file has been reader during 'readAsDataURL'
-    console.log("File as base 64:");
-    console.log(event.target.result);
-    // pass our base64 object on to our callback
-    hiddenInput.value = event.target.result;
-    callback(event.target.result);
-    return(event.target.result);
-    // catch an error if one occurs...
-  }
-    catch (ex) {
-      // output a warning in the DevTools console
-      throw new Error("Couldn't convert file: " + ex);
-    }
-  }
-  // read the file argument
-  reader.readAsDataURL(binaryData);
-};
-
-function addImage(base64Image) {
-if (!base64Image) return;
-var imageContainer = document.getElementById('profile_pic');
-var img = document.createElement('img');
-img.src = base64Image;
-profile_pic.appendChild(img);
-  document.getElementById('create_profile').onclick = function profilePic(){
-    console.log('button click works');
-    var imageContainer = document.getElementById('new_image');
-    var img = new Image();
-    image.src = 'data:image/png;base64,iVBORw0K...';
-    image_new.appendChild(image);
-}
-} // end addImage function
-
-
+//
+//
+//   select our input DOM element with a type of file
+// var fileInput = document.querySelector('input[type="file"]');
+// var hiddenFileForParams = document.querySelector('#base');
+//
+// fileInput.addEventListener('change', function() {
+// var fileAsBase64 = convertToBase64(fileInput.files[0], hiddenFileForParams, addImage);
+// });
+//
+// function convertToBase64(binaryData, hiddenInput, callback) {
+// var reader = new FileReader();
+// reader.onload = function (event) {
+// // try to read whatever file has been 'readAsDataURL'
+//   try {
+//     // event target result is our base64 encoded type
+//     // this is whatever file has been reader during 'readAsDataURL'
+//     console.log("File as base 64:");
+//     console.log(event.target.result);
+//     // pass our base64 object on to our callback
+//     hiddenInput.value = event.target.result;
+//     callback(event.target.result);
+//     return(event.target.result);
+//     // catch an error if one occurs...
+//   }
+//     catch (ex) {
+//       // output a warning in the DevTools console
+//       throw new Error("Couldn't convert file: " + ex);
+//     }
+//   }
+//   // read the file argument
+//   reader.readAsDataURL(binaryData);
+// };
+//
+// function addImage(base64Image) {
+// if (!base64Image) return;
+// var imageContainer = document.getElementById('profile_pic');
+// var img = document.createElement('img');
+// img.src = base64Image;
+// profile_pic.appendChild(img);
+//   document.getElementById('create_profile').onclick = function profilePic(){
+//     console.log('button click works');
+//     var imageContainer = document.getElementById('new_image');
+//     var img = new Image();
+//     image.src = 'data:image/png;base64,iVBORw0K...';
+//     image_new.appendChild(image);
+// }
+// } // end addImage function
+//
+//
 // start Google Maps autocomplete script
 
-var idObject = {};
-var modelDataObj = 'test';
-var placeArray = [];
-
-function testIt(it) {
-  console.log('hi roger');
-  console.log(it);
-  console.log('bye roguer');
-}
-// var idArray =[];
+// var idObject = {};
+// // var modelDataObj = 'test';
+// var placeArray = [];
+// //
+// // function testIt(it) {
+// //   console.log('hi roger');
+// //   console.log(it);
+// //   console.log('bye roguer');
+// // }
+// // var idArray =[];
 $(document).ready(function(){
-
-
-// start Google Maps script for Autocomplete
+//
+//
+// // start Google Maps script for Autocomplete
 // var autocomplete;
 // var placeNumber;
 //
@@ -101,7 +101,7 @@ $(document).ready(function(){
 //   $.ajax(id_post);
 // }
 //
-// // initialize();
+// initialize();
 //
 // var id_post = {
 //   type: "POST",
@@ -116,11 +116,11 @@ $(document).ready(function(){
 //     console.log('Didnt work')
 //   }
 // }
-
-// initialize();
-
-//Google Map by Place ID
+// //
+// // initialize();
 //
+// Google Map by Place ID
+
 // var realPlaceId;
 //
 // function fuckyeah(stuff) {
@@ -154,32 +154,32 @@ $(document).ready(function(){
 // console.log(userPlaceId.responseText);
 // console.log(realPlaceId);
 // console.log(typeof userPlaceId);
-
+//
 // function recoverPlaceId(hookFunction){
-function recoverPlaceId(){
-  return $.ajax({
-  url: '/entry/create_entry/db',
-  type: "GET",
-  dataType: 'text',
-  success: function(data) {
-    placeArray.push(data);
-    console.log(data);
-    // realPlaceId = data;
-    // modelDataObj = data;
-    // hookFunction(data);
-    console.log('we did it roger');
-    // console.log(realPlaceId);
-  },
-  fail: function(error) {
-    console.log('not cool!');
-  }
-});
-}
-var userPlaceId = recoverPlaceId();
-
-
-
-console.log(userPlaceId);
+// function recoverPlaceId(){
+//   return $.ajax({
+//   url: '/entry/create_entry/db',
+//   type: "GET",
+//   dataType: 'text',
+//   success: function(data) {
+//     placeArray.push(data);
+//     console.log(data);
+//     // realPlaceId = data;
+//     // modelDataObj = data;
+//     // hookFunction(data);
+//     console.log('we did it roger');
+//     // console.log(realPlaceId);
+//   },
+//   fail: function(error) {
+//     console.log('not cool!');
+//   }
+// });
+// }
+// var userPlaceId = recoverPlaceId();
+//
+//
+//
+// console.log(userPlaceId);
 
 
 function initializeGoogleMaps(){
@@ -211,56 +211,56 @@ google.maps.event.addDomListener(window,'load',initializeGoogleMaps);
 
 
 
-        // select our input DOM element with a type of file
-  // var fileInput = document.querySelector('input[type="file"]');
-  // var hiddenFileForParams = document.querySelector('input[type="hidden"]');
-  //
-  // fileInput.addEventListener('change', function() {
-  //   var fileAsBase64 = convertToBase64(fileInput.files[0], hiddenFileForParams, addImage);
-  // });
-  //
-  // function convertToBase64(binaryData, hiddenInput, callback) {
-  //   var reader = new FileReader();
-  //     reader.onload = function (event) {
-  //     // try to read whatever file has been 'readAsDataURL'
-  //       try {
-  //         // event target result is our base64 encoded type
-  //         // this is whatever file has been reader during 'readAsDataURL'
-  //         console.log("File as base 64:");
-  //         console.log(event.target.result);
-  //         // pass our base64 object on to our callback
-  //         hiddenInput.value = event.target.result;
-  //         callback(event.target.result);
-  //         return(event.target.result);
-  //         // catch an error if one occurs...
-  //       }
-  //         catch (ex) {
-  //           // output a warning in the DevTools console
-  //           throw new Error("Couldn't convert file: " + ex);
-  //         }
-  //       }
-  //       // read the file argument
-  //       reader.readAsDataURL(binaryData);
-  //     };
-  //
-  // function addImage(base64Image) {
-  //   if (!base64Image) return;
-  //     var imageContainer = document.getElementById('images');
-  //     var img = document.createElement('img');
-  //     img.src = base64Image;
-  //     images.appendChild(img);
-  //       document.getElementById('create_profile').onclick = function profilePic(){
-  //         console.log('button click works');
-  //         var imageContainer = document.getElementById('new_image');
-  //         var img = new Image();
-  //         image.src = 'data:image/png;base64,iVBORw0K...';
-  //         image_new.appendChild(image);
-  //     }
-  //   }
-
-
-  }); // end of document.ready
-
-initialize();
-
+//         // select our input DOM element with a type of file
+//   // var fileInput = document.querySelector('input[type="file"]');
+//   // var hiddenFileForParams = document.querySelector('input[type="hidden"]');
+//   //
+//   // fileInput.addEventListener('change', function() {
+//   //   var fileAsBase64 = convertToBase64(fileInput.files[0], hiddenFileForParams, addImage);
+//   // });
+//   //
+//   // function convertToBase64(binaryData, hiddenInput, callback) {
+//   //   var reader = new FileReader();
+//   //     reader.onload = function (event) {
+//   //     // try to read whatever file has been 'readAsDataURL'
+//   //       try {
+//   //         // event target result is our base64 encoded type
+//   //         // this is whatever file has been reader during 'readAsDataURL'
+//   //         console.log("File as base 64:");
+//   //         console.log(event.target.result);
+//   //         // pass our base64 object on to our callback
+//   //         hiddenInput.value = event.target.result;
+//   //         callback(event.target.result);
+//   //         return(event.target.result);
+//   //         // catch an error if one occurs...
+//   //       }
+//   //         catch (ex) {
+//   //           // output a warning in the DevTools console
+//   //           throw new Error("Couldn't convert file: " + ex);
+//   //         }
+//   //       }
+//   //       // read the file argument
+//   //       reader.readAsDataURL(binaryData);
+//   //     };
+//   //
+//   // function addImage(base64Image) {
+//   //   if (!base64Image) return;
+//   //     var imageContainer = document.getElementById('images');
+//   //     var img = document.createElement('img');
+//   //     img.src = base64Image;
+//   //     images.appendChild(img);
+//   //       document.getElementById('create_profile').onclick = function profilePic(){
+//   //         console.log('button click works');
+//   //         var imageContainer = document.getElementById('new_image');
+//   //         var img = new Image();
+//   //         image.src = 'data:image/png;base64,iVBORw0K...';
+//   //         image_new.appendChild(image);
+//   //     }
+//   //   }
+//
+//
+//   }); // end of document.ready
+//
+// // initialize();
+// //
 }); // end of document.ready
