@@ -18,8 +18,16 @@ body {
 #profile_head {
   margin: 50px; }
 
+.imageContainer {
+  max-width: 130px;
+  max-height: 130px; }
+
+.imageContainer img {
+  height: auto;
+  width: 100%; }
+
 #profile_pic img {
-  height: 80px;
+  height: 70px;
   width: 80px; }
 
 #map-canvas {

@@ -16,6 +16,7 @@ class ProfilesController < ApplicationController
 
 
 
+
   post '/' do
     p params
     @profiles = Profile.where("profile_name = ?", params[:profile_name])
@@ -27,6 +28,7 @@ class ProfilesController < ApplicationController
     @profiles.base_64_image = params[:image_as_base64]
     @profiles.save
   end
+
 
 
   get '/create' do

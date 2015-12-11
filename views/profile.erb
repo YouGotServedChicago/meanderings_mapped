@@ -3,7 +3,11 @@
 <div class="panel panel-default">
     <div class="panel-heading">About</div>
       <div class="panel-body" id="image_new">
-        <p>Placeholder for profile image</p>
+        <% @profiles.each do |profile| %>
+          <div class="imageContainer">
+            <img src="<%= profile.base_64_image%>">
+          </div>
+        <%end%>
       </div>
     <table class="table">
       <tbody>
@@ -40,9 +44,6 @@
 <% @entries.each do |entry| %>
 <div class="panel panel-default">
     <div class="panel-heading">Trip</div>
-      <div class="panel-body" id="image_new">
-        <div id="map-canvas" style="width: 200px; height: 150px"></div>
-      </div>
       <table class="table">
       <tbody>
         <tr>
