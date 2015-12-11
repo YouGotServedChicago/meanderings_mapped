@@ -10,7 +10,6 @@ class ProfilesController < ApplicationController
       @profiles = Profile.all
     end
     erb :profile
-
   end
 
 

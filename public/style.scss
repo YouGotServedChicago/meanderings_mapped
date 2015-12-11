@@ -17,8 +17,14 @@ body {
 }
 
 .panel.panel-default {
-  margin: $margin-left;
-  width: 30%;
+  // margin: $margin-left;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.panel-heading{
+  border-radius: 15px;
+  background-color: yellow;
 }
 
 #profile_head {
@@ -39,6 +45,7 @@ body {
   height: 70px;
   width: 80px;
 }
+
 #map-canvas{
   height: 150px;
   width: 150px;
@@ -46,4 +53,31 @@ body {
 #meander {
   margin-top: 40px;
   text-align: center;
+}
+
+#profile_about {
+  float: left;
+  width: 30%;
+  // display: block;
+  margin-left: 50px;
+}
+
+#profile_trips {
+  float: right;
+  width: 40%;
+  margin-right: 150px;
+}
+
+#entry_button {
+  margin-top: 30px;
+  margin-left: 150px;
+}
+
+tbody{
+width: auto !important;
+border-radius: 15px;
+}
+
+table {
+  border-radius: 15px;
 }

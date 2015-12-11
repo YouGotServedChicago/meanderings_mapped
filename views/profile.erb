@@ -1,5 +1,8 @@
+<div class="container-fluid">
 <h1 id="profile_head">Profile Page</h1>
 
+
+<div id="profile_about">
 <div class="panel panel-default">
     <div class="panel-heading">About</div>
       <div class="panel-body" id="image_new">
@@ -40,11 +43,20 @@
     </tbody>
   </table>
 </div>
+<form action="/entry/create_entry">
+    <input id="entry_button" class="btn btn-primary"type="submit" value="Add Journal Entry">
+</form>
+</div>
+<!-- </div> -->
 
+
+
+<div id="profile_trips">
 <% @entries.each do |entry| %>
+<!-- <div class="col-lg-6"> -->
 <div class="panel panel-default">
-    <div class="panel-heading">Trip</div>
-      <table class="table">
+    <div class="panel-heading" border-radius="25px">Trip</div>
+      <table class="table" border-radius="15px">
       <tbody>
         <tr>
           <td>Title</td>
@@ -53,8 +65,11 @@
         </tr>
         <tr>
         <td>Map</td>
-        <td>Map will go here!!!
-          <div id="map-canvas"></div>
+        <td>
+          <div id="<%=entry.id%>"</div>
+          <script>
+          initializeGoogleMaps("<%=entry.id%>","<%=entry.google_place_id%>");
+          </script>
         </td>
       </tr>
       <tr>
@@ -72,10 +87,10 @@
     </tbody>
   </table>
 </div>
-<% end %>
+<%end%>
+</div>
+</div>
 
 
- <form action="/entry/create_entry">
-    <input class="btn btn-primary"type="submit" value="Add Journal Entry">
-</form>
-<!-- <div id="map-canvas" style="width: 200px; height: 150px"></div> -->
+
+</script> -->
