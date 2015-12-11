@@ -6,7 +6,7 @@ The wireframes for our project can be accessed via the following link to [imgur]
 
 View the site [here]http://104.236.91.111/
 
-![homepage](http://i.imgur.com/HbtEaZG.jpg)
+![homepage](http://i.imgur.com/HbtEaZG.jpg)!
 
 ## Description
 
