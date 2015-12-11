@@ -11,24 +11,6 @@ class ProfilesController < ApplicationController
   end
 
 
-  get '/profile' do
-    erb :profile
-  end
-
-
-  # post '/' do
-  #   p params
-  #   @profiles = Profile.where("profile_name = ?", params[:profile_name])
-  #   @profiles.profile_name = params[:profile_name]
-  #   @profiles.date_of_birth = params[:date_of_birth]
-  #   @profiles.city = params[:city]
-  #   @profiles.bio = params[:bio]
-  #   @profiles.image = params[:image]
-  #   @profiles.base_64_image = params[:image_as_base64]
-  #   @profiles.save
-  # end
-
-
   get '/create' do
     current_user = User.find(session[:user_name].id)
     p "uerahjkbdfjzkilkbaedizhkreafhudjkaf================="
